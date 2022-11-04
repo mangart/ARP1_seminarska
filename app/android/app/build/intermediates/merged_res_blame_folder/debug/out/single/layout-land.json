@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "org.tensorflow.lite.examples.imageclassification.app-mergeDebugResources-40:/layout-land/layout.xml",
+        "source": "org.tensorflow.lite.examples.imageclassification.app-main-43:/layout-land/layout.xml"
+    }
+]

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "org.tensorflow.lite.examples.imageclassification.app-mergeDebugResources-3:/values-v26/values-v26.xml",
+            "outputFile": "org.tensorflow.lite.examples.imageclassification.app-mergeDebugResources-39:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\žan\\.gradle\\caches\\transforms-3\\549652bf52b3ce316e30ee790c4e32e7\\transformed\\appcompat-1.4.2\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\žan\\.gradle\\caches\\transforms-3\\b307ce7fe8cffd1c65b3c72bae1c1b58\\transformed\\appcompat-1.4.2\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

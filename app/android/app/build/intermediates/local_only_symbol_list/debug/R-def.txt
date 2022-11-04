@@ -29,6 +29,9 @@ drawable tfl_logo
 id action_camera_to_permissions
 id action_permissions_to_camera
 id bottom_sheet_layout
+id button
+id button2
+id button3
 id camera_container
 id camera_fragment
 id fragment_container
@@ -40,6 +43,7 @@ id max_results_value
 id nav_graph
 id permissions_fragment
 id recyclerview_results
+id relativeLayout
 id spinner_delegate
 id spinner_model
 id threads_minus
@@ -54,9 +58,12 @@ id tvScore
 id view_finder
 integer bottom_sheet_control_text_min_ems
 layout activity_main
+layout activity_main2
+layout activity_main3
 layout fragment_camera
 layout info_bottom_sheet
 layout item_classification_result
+layout layout
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round

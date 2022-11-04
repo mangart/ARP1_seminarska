@@ -2682,6 +2682,9 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id button
+id button2
+id button3
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2948,6 +2951,7 @@ id radio
 id ratio
 id rectangles
 id recyclerview_results
+id relativeLayout
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3198,6 +3202,8 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_main2
+layout activity_main3
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3217,6 +3223,7 @@ layout design_text_input_start_icon
 layout fragment_camera
 layout info_bottom_sheet
 layout item_classification_result
+layout layout
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
