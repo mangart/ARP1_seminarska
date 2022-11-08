@@ -72,16 +72,16 @@
         "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\color\\selector_ic.xml"
     },
     {
-        "merged": "org.tensorflow.lite.examples.imageclassification.app-merged_res-41:/layout_activity_main.xml.flat",
-        "source": "org.tensorflow.lite.examples.imageclassification.app-main-43:/layout/activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\mipmap-mdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\drawable_ic_plus.xml.flat",
         "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\drawable\\ic_plus.xml"
+    },
+    {
+        "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\layout-land_activity_main2.xml.flat",
+        "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\layout-land\\activity_main2.xml"
     },
     {
         "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\layout_item_classification_result.xml.flat",

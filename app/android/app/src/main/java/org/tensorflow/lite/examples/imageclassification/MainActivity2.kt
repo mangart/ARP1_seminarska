@@ -20,17 +20,17 @@ import android.content.pm.ActivityInfo
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import org.tensorflow.lite.examples.imageclassification.databinding.ActivityMainBinding
+import org.tensorflow.lite.examples.imageclassification.databinding.ActivityMain2Binding
 
 class MainActivity2 : AppCompatActivity() {
-    private lateinit var activityMainBinding: ActivityMainBinding
+    private lateinit var activityMain2Binding: ActivityMain2Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(activityMainBinding.root)
+        activityMain2Binding = ActivityMain2Binding.inflate(layoutInflater)
+        setContentView(activityMain2Binding.root)
     }
 
     override fun onBackPressed() {

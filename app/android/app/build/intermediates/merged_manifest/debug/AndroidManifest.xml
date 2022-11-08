@@ -27,12 +27,16 @@
         android:supportsRtl="true"
         android:taskAffinity=""
         android:testOnly="true" >
-        <activity
-            android:name="org.tensorflow.lite.examples.imageclassification.MainActivity3"
+
+        <!--
+            <activity
+            android:name=".MainActivity2"
             android:exported="false" />
+        -->
         <activity
             android:name="org.tensorflow.lite.examples.imageclassification.MainActivity2"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="org.tensorflow.lite.examples.imageclassification.MainActivity"
             android:clearTaskOnLaunch="true"

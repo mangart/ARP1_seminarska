@@ -1,6 +1,10 @@
 [
     {
-        "merged": "org.tensorflow.lite.examples.imageclassification.app-mergeDebugResources-40:/layout-land/layout.xml",
-        "source": "org.tensorflow.lite.examples.imageclassification.app-main-43:/layout-land/layout.xml"
+        "merged": "org.tensorflow.lite.examples.imageclassification.app-mergeDebugResources-40:/layout-land/activity_main2.xml",
+        "source": "org.tensorflow.lite.examples.imageclassification.app-main-43:/layout-land/activity_main2.xml"
+    },
+    {
+        "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-mergeDebugResources-40:\\layout-land\\layout.xml",
+        "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\layout-land\\layout.xml"
     }
 ]
