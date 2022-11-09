@@ -14,6 +14,8 @@
 - test 500
 - epochs 1
 - bach size 8
+- IMG_W = 224
+- IMG_H = 224
 
 # labels
 - ignore
