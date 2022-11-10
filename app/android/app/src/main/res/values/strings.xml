@@ -49,5 +49,6 @@
         <item>EfficientNet Lite1</item>
         <item>EfficientNet Lite2</item>
         <item>MobileNet V2 Coins</item>
+        <item>Pedestrians</item>
     </string-array>
 </resources>

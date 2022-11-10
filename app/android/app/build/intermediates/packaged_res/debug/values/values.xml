@@ -11,6 +11,7 @@
         <item>EfficientNet Lite1</item>
         <item>EfficientNet Lite2</item>
         <item>MobileNet V2 Coins</item>
+        <item>Pedestrians</item>
     </string-array>
     <color name="bottom_sheet_background">#EEEEEE</color>
     <color name="bottom_sheet_text_color">@android:color/black</color>
