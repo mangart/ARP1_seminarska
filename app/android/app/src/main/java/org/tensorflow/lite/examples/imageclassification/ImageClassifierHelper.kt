@@ -81,6 +81,7 @@ class ImageClassifierHelper(
                 MODEL_EFFICIENTNETV1 -> "efficientnet-lite1.tflite"
                 MODEL_EFFICIENTNETV2 -> "efficientnet-lite2.tflite"
                 MODEL_EURONET -> "euronet.tflite"
+                MODEL_PEDESTRIANS -> "mobilenet2_10_11_7pm.tflite"
                 else -> "mobilenetv1.tflite"
             }
 
@@ -158,6 +159,7 @@ class ImageClassifierHelper(
         const val MODEL_EFFICIENTNETV1 = 2
         const val MODEL_EFFICIENTNETV2 = 3
         const val MODEL_EURONET = 4
+        const val MODEL_PEDESTRIANS = 5
 
         private const val TAG = "ImageClassifierHelper"
     }
