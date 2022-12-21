@@ -86,8 +86,7 @@ class ImageClassifierHelper(
             }
 
         try {
-            imageClassifier =
-                ImageClassifier.createFromFileAndOptions(context, modelName, optionsBuilder.build())
+            imageClassifier = ImageClassifier.createFromFileAndOptions(context, modelName, optionsBuilder.build())
         } catch (e: IllegalStateException) {
             imageClassifierListener?.onError(
                 "Image classifier failed to initialize. See error logs for details"

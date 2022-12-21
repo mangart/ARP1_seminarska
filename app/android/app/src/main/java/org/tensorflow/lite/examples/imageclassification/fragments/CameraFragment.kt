@@ -19,6 +19,7 @@ package org.tensorflow.lite.examples.imageclassification.fragments
 import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.graphics.Bitmap
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
@@ -37,6 +38,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.tensorflow.lite.examples.imageclassification.ImageClassifierHelper
+import org.tensorflow.lite.examples.imageclassification.MainActivity
 import org.tensorflow.lite.examples.imageclassification.R
 import org.tensorflow.lite.examples.imageclassification.databinding.FragmentCameraBinding
 import org.tensorflow.lite.task.vision.classifier.Classifications
@@ -341,8 +343,36 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
         results: List<Classifications>?,
         inferenceTime: Long
     ) {
+
         activity?.runOnUiThread {
             // Show result on bottom sheet
+            val itr = results!!.listIterator()
+            var maxLabel: String = "";
+            var maxScore: Float = 0F;
+            while (itr.hasNext()) {
+                val kategorije = itr.next().categories;
+                var i = 0;
+                while(i < kategorije.size){
+                    val neki = kategorije.get(i);
+                    var score = neki.score;
+                    var label = neki.label;
+                    Log.i("blabla111",neki.toString())
+                    Log.i("blablaLABEL",neki.label)
+                    Log.i("blablaSCORE",neki.score.toString())
+                    if(label == "break") {
+                        maxScore = score;
+                        maxLabel = label;
+                    }
+                    i += 1
+                }
+                Log.i("blabla",kategorije.toString())
+            }
+            if(maxLabel == "break"){
+                Log.i("ZVOK","Ustavi se!!!")
+                val  mp: MediaPlayer =  MediaPlayer.create(this.context,R.raw.beep_02);  //MediaPlayer.create(this, R.raw.beep_02);
+                mp.start()
+            }
+            //Log.i("blabla",results.toString())
             classificationResultsAdapter.updateResults(results)
             classificationResultsAdapter.notifyDataSetChanged()
             fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
