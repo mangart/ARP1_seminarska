@@ -68,6 +68,7 @@ mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
+raw beep_02
 string alt_bottom_sheet_chevron
 string alt_bottom_sheet_max_results_button_minus
 string alt_bottom_sheet_max_results_button_plus
