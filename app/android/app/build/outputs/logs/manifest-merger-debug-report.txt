@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12
+ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-51:12
+INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-51:12
+INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-51:12
+INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-51:12
 MERGED from [androidx.databinding:viewbinding:7.2.1] C:\Users\žan\.gradle\caches\transforms-3\186452383252fe1104bbc87982f6fea1\transformed\viewbinding-7.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.4.2] C:\Users\žan\.gradle\caches\transforms-3\a9daef55005c9ac740ab0cd0cc56dc56\transformed\navigation-fragment-ktx-2.4.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment:2.4.2] C:\Users\žan\.gradle\caches\transforms-3\33fdfd70eac0723d6cd5cb5af134ab6f\transformed\navigation-fragment-2.4.2\AndroidManifest.xml:17:1-24:12
@@ -73,16 +73,16 @@ MERGED from [org.tensorflow:tensorflow-lite-task-base:0.4.0] C:\Users\žan\.grad
 MERGED from [org.tensorflow:tensorflow-lite-support-api:0.4.0] C:\Users\žan\.gradle\caches\transforms-3\ea66336203d18a51da3415f462003b66\transformed\tensorflow-lite-support-api-0.4.0\AndroidManifest.xml:2:1-5:12
 MERGED from [org.tensorflow:tensorflow-lite-api:2.8.0] C:\Users\žan\.gradle\caches\transforms-3\2feef9b6bb45e757846564184a412ed7\transformed\tensorflow-lite-api-2.8.0\AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\žan\.gradle\caches\transforms-3\86a5cc1f13485512ff194eb9c8f4cdee\transformed\image-1.0.0-beta1\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-51:12
+INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-51:12
+INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-51:12
 	package
 		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:5:5-63
 		INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-51:12
 		INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:4:5-51
@@ -90,7 +90,7 @@ INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\A
 		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:3:5-61
 	android:versionCode
 		INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-51:12
 		INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:11-69
@@ -106,8 +106,16 @@ uses-permission#android.permission.CAMERA
 ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:9:5-65
 	android:name
 		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:9:22-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:10:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:11:22-77
 application
-ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:11:5-48:19
+ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:12:5-49:19
 MERGED from [androidx.window:window:1.1.0-alpha02] C:\Users\žan\.gradle\caches\transforms-3\b8ff1e83506e588a0cf6ec20b4013a5a\transformed\window-1.1.0-alpha02\AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.window:window:1.1.0-alpha02] C:\Users\žan\.gradle\caches\transforms-3\b8ff1e83506e588a0cf6ec20b4013a5a\transformed\window-1.1.0-alpha02\AndroidManifest.xml:24:5-31:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\žan\.gradle\caches\transforms-3\fd2e63895e3ec93dffe8803ae49f4209\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
@@ -141,61 +149,61 @@ MERGED from [com.google.android.odml:image:1.0.0-beta1] C:\Users\žan\.gradle\ca
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] C:\Users\žan\.gradle\caches\transforms-3\1f80a42057701caa78b3f2d54b2f271b\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:14:9-41
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:15:9-41
 	tools:ignore
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:19:9-35
 	android:roundIcon
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:15:9-54
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:16:9-54
 	android:icon
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:13:9-43
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:14:9-43
 	android:allowBackup
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:13:9-35
 	android:taskAffinity
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:17:9-32
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:18:9-32
 activity#org.tensorflow.lite.examples.imageclassification.MainActivity2
-ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:22:9-25:40
+ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:23:9-26:40
 	android:exported
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:25:13-37
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:26:13-37
 	android:theme
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:24:13-44
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:25:13-44
 	android:name
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:23:13-42
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:24:13-42
 activity#org.tensorflow.lite.examples.imageclassification.MainActivity
-ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:26:9-47:20
+ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:27:9-48:20
 	android:clearTaskOnLaunch
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:28:13-45
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:29:13-45
 	android:exported
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:30:13-36
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:31:13-36
 	android:resizeableActivity
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:31:13-46
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:32:13-46
 	android:rotationAnimation
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:32:13-49
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:33:13-49
 	android:configChanges
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:29:13-91
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:30:13-91
 	tools:targetApi
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:34:13-32
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:35:13-32
 	android:theme
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:33:13-44
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:34:13-44
 	android:name
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:27:13-41
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:28:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:37:13-41:29
+ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:38:13-42:29
 action#android.intent.action.MAIN
-ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:38:17-69
+ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:39:17-69
 	android:name
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:38:25-66
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:39:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:40:17-77
+ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:41:17-77
 	android:name
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:40:27-74
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:41:27-74
 meta-data#android.notch_support
-ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:44:13-46:40
+ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:45:13-47:40
 	android:value
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:46:17-37
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:47:17-37
 	android:name
-		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:45:17-53
+		ADDED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:46:17-53
 uses-sdk
 INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml
@@ -378,12 +386,8 @@ ADDED from [androidx.camera:camera-camera2:1.2.0-alpha02] C:\Users\žan\.gradle\
 		ADDED from [androidx.camera:camera-camera2:1.2.0-alpha02] C:\Users\žan\.gradle\caches\transforms-3\a764f315c7098ee93fe80a671573dcb8\transformed\camera-camera2-1.2.0-alpha02\AndroidManifest.xml:33:17-86
 	android:name
 		ADDED from [androidx.camera:camera-camera2:1.2.0-alpha02] C:\Users\žan\.gradle\caches\transforms-3\a764f315c7098ee93fe80a671573dcb8\transformed\camera-camera2-1.2.0-alpha02\AndroidManifest.xml:32:17-103
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12 reason: tensorflow_lite_support.acceleration.configuration has a targetSdkVersion < 4
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12 reason: tensorflow_lite_support.acceleration.configuration has a targetSdkVersion < 4
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-50:12 reason: tensorflow_lite_support.acceleration.configuration requested WRITE_EXTERNAL_STORAGE
+IMPLIED from C:\faks_seminarske\ARP1\ARP1_seminarska\app\android\app\src\main\AndroidManifest.xml:2:1-51:12 reason: tensorflow_lite_support.acceleration.configuration has a targetSdkVersion < 4
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\žan\.gradle\caches\transforms-3\8f6aaab28e11679f9812089e0c0656e5\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\žan\.gradle\caches\transforms-3\0640470f8a9f62f7e48792f35d78c7df\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:26:9-34:20

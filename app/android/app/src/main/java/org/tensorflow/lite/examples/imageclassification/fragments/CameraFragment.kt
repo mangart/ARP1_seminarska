@@ -42,6 +42,7 @@ import org.tensorflow.lite.examples.imageclassification.MainActivity
 import org.tensorflow.lite.examples.imageclassification.R
 import org.tensorflow.lite.examples.imageclassification.databinding.FragmentCameraBinding
 import org.tensorflow.lite.task.vision.classifier.Classifications
+import java.io.File
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -369,8 +370,29 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
             }
             if(maxLabel == "break"){
                 Log.i("ZVOK","Ustavi se!!!")
-                val  mp: MediaPlayer =  MediaPlayer.create(this.context,R.raw.beep_02);  //MediaPlayer.create(this, R.raw.beep_02);
-                mp.start()
+                val fileName = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas.txt"
+                var file = File(fileName)
+                // create a new file
+                val isNewFileCreated :Boolean = file.createNewFile()
+                if(isNewFileCreated){
+                    //Log.d("neki007","$fileName is created successfully.")
+                } else{
+                    //Log.d("neki007","$fileName already exists.")
+                    //Log.d("neki007",file.readText().toString())
+                    val tslong = file.readText().toString().toLong()
+                    val tscurrent = System.currentTimeMillis()
+                    //Log.d("neki007", (tscurrent-tslong).toString())
+                    if((tscurrent - tslong) > 3000) {
+                        Log.d("neki007","SEM V IF STAVKU!")
+                        file.writeText(tscurrent.toString())
+                        val  mp: MediaPlayer =  MediaPlayer.create(this.context,R.raw.beep_02);  //MediaPlayer.create(this, R.raw.beep_02);
+                        mp.start()
+                    }
+                    //file.writeText(tscurrent.toString())
+                }
+
+                //Log.d("neki007",file.readText().toString())
+
             }
             //Log.i("blabla",results.toString())
             classificationResultsAdapter.updateResults(results)

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        val fileName = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas.txt"
+        var file = File(fileName)
+        // create a new file
+        val isNewFileCreated :Boolean = file.createNewFile()
+        if(isNewFileCreated){
+            Log.d("neki007","$fileName is created successfully.")
+        } else{
+            Log.d("neki007","$fileName already exists.")
+            Log.d("neki007",file.readText().toString())
+        }
+        val tsLong = System.currentTimeMillis()
+        file.writeText(tsLong.toString())
+        Log.d("neki007",file.readText().toString())
         val button: Button = findViewById(R.id.button)
         button.setOnClickListener {
             // Do something in response to button click

@@ -76,13 +76,13 @@ class ImageClassifierHelper(
 
         val modelName =
             when (currentModel) {
-                MODEL_MOBILENETV1 -> "mobilenetv1.tflite"
-                MODEL_EFFICIENTNETV0 -> "efficientnet-lite0.tflite"
-                MODEL_EFFICIENTNETV1 -> "efficientnet-lite1.tflite"
-                MODEL_EFFICIENTNETV2 -> "efficientnet-lite2.tflite"
-                MODEL_EURONET -> "euronet.tflite"
-                MODEL_PEDESTRIANS -> "mobilenet2_10_11_7pm.tflite"
-                else -> "mobilenetv1.tflite"
+                MODEL_MOBILENETV1 -> "mobilenet_06_12_9pm.tflite" //"mobilenetv1.tflite"
+                MODEL_EFFICIENTNETV0 -> "mobilenet_06_12_9pm.tflite" //"efficientnet-lite0.tflite"
+                MODEL_EFFICIENTNETV1 -> "mobilenet_06_12_9pm.tflite" //"efficientnet-lite1.tflite"
+                MODEL_EFFICIENTNETV2 -> "mobilenet_06_12_9pm.tflite" //"efficientnet-lite2.tflite"
+                MODEL_EURONET -> "mobilenet_06_12_9pm.tflite" //"euronet.tflite"
+                MODEL_PEDESTRIANS -> "mobilenet_06_12_9pm.tflite"
+                else -> "mobilenet_06_12_9pm.tflite"
             }
 
         try {
