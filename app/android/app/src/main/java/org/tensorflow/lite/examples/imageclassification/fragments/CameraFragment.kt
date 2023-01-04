@@ -19,8 +19,11 @@ package org.tensorflow.lite.examples.imageclassification.fragments
 import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.graphics.Bitmap
+import android.media.AudioManager
 import android.media.MediaPlayer
+import android.media.SoundPool
 import android.os.Bundle
+import android.os.Handler
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
@@ -45,6 +48,7 @@ import org.tensorflow.lite.task.vision.classifier.Classifications
 import java.io.File
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+//import java.util.logging.Handler
 
 class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
 
@@ -70,6 +74,14 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
 
     /** Blocking camera operations are performed using this executor */
     private lateinit var cameraExecutor: ExecutorService
+
+    // Spremenljivke za predvajanje zvoka na vsake x sekund
+    var handler: Handler = Handler()
+    var runnable: Runnable? = null
+    var delay = 3000
+    lateinit var soundPool: SoundPool
+    var sound1 : Int = 0
+    //val  mp: MediaPlayer =  MediaPlayer.create(this.context,R.raw.beep_02);  //MediaPlayer.create(this, R.raw.beep_02);
 
     override fun onResume() {
         super.onResume()
@@ -347,6 +359,8 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
 
         activity?.runOnUiThread {
             // Show result on bottom sheet
+            soundPool = SoundPool(2, AudioManager.STREAM_MUSIC, 0)
+            sound1 = soundPool.load(this.context, R.raw.beep_02, 1)
             val itr = results!!.listIterator()
             var maxLabel: String = "";
             var maxScore: Float = 0F;
@@ -379,19 +393,53 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                 } else{
                     //Log.d("neki007","$fileName already exists.")
                     //Log.d("neki007",file.readText().toString())
-                    val tslong = file.readText().toString().toLong()
-                    val tscurrent = System.currentTimeMillis()
+                    val tslong = file.readText().toString().toInt()
+                    if(tslong == 0){
+                        Log.d("neki006","Zacenjam handker!");
+                        var cifra = 1;
+                        file.writeText(cifra.toString())
+                        handler.postDelayed(Runnable {
+                            handler.postDelayed(runnable!!, delay.toLong())
+                            //Toast.makeText(this@CameraFragment, "This method will run every 10 seconds", Toast.LENGTH_SHORT).show()
+                            soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+                            //mp.start()
+                        }.also { runnable = it }, delay.toLong())
+                    }
+                   /* val tscurrent = System.currentTimeMillis()
                     //Log.d("neki007", (tscurrent-tslong).toString())
                     if((tscurrent - tslong) > 3000) {
                         Log.d("neki007","SEM V IF STAVKU!")
                         file.writeText(tscurrent.toString())
                         val  mp: MediaPlayer =  MediaPlayer.create(this.context,R.raw.beep_02);  //MediaPlayer.create(this, R.raw.beep_02);
                         mp.start()
-                    }
+                    }*/
                     //file.writeText(tscurrent.toString())
                 }
 
                 //Log.d("neki007",file.readText().toString())
+
+            } else {
+                val fileName = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas.txt"
+                var file = File(fileName)
+                val fileName1 = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas1.txt"
+                var file1 = File(fileName1)
+                var cifra = 0;
+                // create a new file
+                val isNewFileCreated :Boolean = file.createNewFile()
+                if(isNewFileCreated){
+                    //Log.d("neki007","$fileName is created successfully.")
+                }
+                val tslong = file.readText().toString().toInt()
+                val tscurrent = System.currentTimeMillis()
+                //Log.d("neki007", (tscurrent-tslong).toString())
+                val tslong1 = file1.readText().toString().toLong()
+                if(tslong == 1 && (tscurrent - tslong1) > 3000){
+                    Log.d("neki006","Brisem handler!")
+                    handler.removeCallbacks(runnable!!)
+                    file1.writeText(tscurrent.toString())
+                    file.writeText(cifra.toString())
+                }
+
 
             }
             //Log.i("blabla",results.toString())

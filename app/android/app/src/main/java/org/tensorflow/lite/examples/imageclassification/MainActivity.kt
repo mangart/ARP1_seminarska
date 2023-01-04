@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        val fileName = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas.txt"
+        val fileName = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas1.txt"
         var file = File(fileName)
         // create a new file
         val isNewFileCreated :Boolean = file.createNewFile()
@@ -46,7 +47,17 @@ class MainActivity : AppCompatActivity() {
 
         button2.setOnClickListener {
             val  mp: MediaPlayer = MediaPlayer.create(this, R.raw.beep_02);
-            mp.start()
+            mp.start();
+            /*var handler: Handler = Handler()
+            var runnable: Runnable? = null
+            var delay = 3000
+            handler.postDelayed(Runnable {
+                handler.postDelayed(runnable!!, delay.toLong())
+                //Toast.makeText(this@CameraFragment, "This method will run every 10 seconds", Toast.LENGTH_SHORT).show()
+                //soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+                mp.start()
+            }.also { runnable = it }, delay.toLong())*/
+            //mp.start()
             //System.exit(0)
         }
 
