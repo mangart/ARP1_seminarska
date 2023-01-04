@@ -24,6 +24,7 @@ import android.media.MediaPlayer
 import android.media.SoundPool
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.*
@@ -76,9 +77,9 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
     private lateinit var cameraExecutor: ExecutorService
 
     // Spremenljivke za predvajanje zvoka na vsake x sekund
-    var handler: Handler = Handler()
+    var handler: Handler = Handler(Looper.getMainLooper())
     var runnable: Runnable? = null
-    var delay = 3000
+    var delay = 2000
     lateinit var soundPool: SoundPool
     var sound1 : Int = 0
     //val  mp: MediaPlayer =  MediaPlayer.create(this.context,R.raw.beep_02);  //MediaPlayer.create(this, R.raw.beep_02);
@@ -358,12 +359,14 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
     ) {
 
         activity?.runOnUiThread {
-            // Show result on bottom sheet
+            // Initializing sound variables
             soundPool = SoundPool(2, AudioManager.STREAM_MUSIC, 0)
             sound1 = soundPool.load(this.context, R.raw.beep_02, 1)
+            // creating iterator for navigating through predicted labels
             val itr = results!!.listIterator()
             var maxLabel: String = "";
             var maxScore: Float = 0F;
+            // iterating through predictions
             while (itr.hasNext()) {
                 val kategorije = itr.next().categories;
                 var i = 0;
@@ -374,6 +377,7 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                     Log.i("blabla111",neki.toString())
                     Log.i("blablaLABEL",neki.label)
                     Log.i("blablaSCORE",neki.score.toString())
+                    // if the break prediction is present save this information
                     if(label == "break") {
                         maxScore = score;
                         maxLabel = label;
@@ -382,8 +386,10 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                 }
                 Log.i("blabla",kategorije.toString())
             }
+            // if 'break is among the predictions check some things and play sound
             if(maxLabel == "break"){
                 Log.i("ZVOK","Ustavi se!!!")
+                // checking if a file exists and getting data from that file about if the handler has been set. The file contains 1 if a handler is active andd 0 if not
                 val fileName = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas.txt"
                 var file = File(fileName)
                 // create a new file
@@ -394,16 +400,18 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                     //Log.d("neki007","$fileName already exists.")
                     //Log.d("neki007",file.readText().toString())
                     val tslong = file.readText().toString().toInt()
+                    // if handler is not active, activate the handler and write to the file that the handler is now active
                     if(tslong == 0){
-                        Log.d("neki006","Zacenjam handker!");
+                        Log.d("neki006","Zacenjam handler!");
                         var cifra = 1;
                         file.writeText(cifra.toString())
-                        handler.postDelayed(Runnable {
-                            handler.postDelayed(runnable!!, delay.toLong())
+                        soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+                        handler.post(Runnable {
                             //Toast.makeText(this@CameraFragment, "This method will run every 10 seconds", Toast.LENGTH_SHORT).show()
                             soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+                            handler.postDelayed(runnable!!, delay.toLong())
                             //mp.start()
-                        }.also { runnable = it }, delay.toLong())
+                        }.also { runnable = it })//, delay.toLong())
                     }
                    /* val tscurrent = System.currentTimeMillis()
                     //Log.d("neki007", (tscurrent-tslong).toString())
@@ -416,8 +424,8 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                     //file.writeText(tscurrent.toString())
                 }
 
-                //Log.d("neki007",file.readText().toString())
-
+                //Log.d("neki007",file.readText().toString();
+            // if break is not among the predictions read data from the file that contains info if the handler is active and the file that contains info of the time passed
             } else {
                 val fileName = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas.txt"
                 var file = File(fileName)
@@ -433,9 +441,12 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                 val tscurrent = System.currentTimeMillis()
                 //Log.d("neki007", (tscurrent-tslong).toString())
                 val tslong1 = file1.readText().toString().toLong()
+                // if handler is currently active and if more than 3 seconds have passed when the handler was first stoped, write to the file that the handler is not active nad write to another file the current time
                 if(tslong == 1 && (tscurrent - tslong1) > 3000){
                     Log.d("neki006","Brisem handler!")
-                    handler.removeCallbacks(runnable!!)
+                    if(runnable != null) {
+                        handler.removeCallbacks(runnable!!)
+                    }
                     file1.writeText(tscurrent.toString())
                     file.writeText(cifra.toString())
                 }

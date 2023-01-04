@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener {
             val  mp: MediaPlayer = MediaPlayer.create(this, R.raw.beep_02);
             mp.start();
-            /*var handler: Handler = Handler()
+            var handler: Handler = Handler()
             var runnable: Runnable? = null
             var delay = 3000
             handler.postDelayed(Runnable {
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                 //Toast.makeText(this@CameraFragment, "This method will run every 10 seconds", Toast.LENGTH_SHORT).show()
                 //soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
                 mp.start()
-            }.also { runnable = it }, delay.toLong())*/
+            }.also { runnable = it }, delay.toLong())
             //mp.start()
             //System.exit(0)
         }

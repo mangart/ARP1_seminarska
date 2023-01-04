@@ -24,12 +24,12 @@
         "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
-    },
-    {
         "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\layout_info_bottom_sheet.xml.flat",
         "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\layout\\info_bottom_sheet.xml"
+    },
+    {
+        "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\mipmap-hdpi_ic_launcher_round.png.flat",
@@ -68,16 +68,16 @@
         "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "org.tensorflow.lite.examples.imageclassification.app-merged_res-41:/raw_beep_02.mp3.flat",
-        "source": "org.tensorflow.lite.examples.imageclassification.app-main-43:/raw/beep_02.mp3"
-    },
-    {
         "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\color_selector_ic.xml.flat",
         "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\color\\selector_ic.xml"
     },
     {
         "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "org.tensorflow.lite.examples.imageclassification.app-merged_res-41:/raw_beep_02.wav.flat",
+        "source": "org.tensorflow.lite.examples.imageclassification.app-main-43:/raw/beep_02.wav"
     },
     {
         "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\drawable_ic_plus.xml.flat",
@@ -110,6 +110,10 @@
     {
         "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\raw_beep_02.mp3.flat",
+        "source": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-main-43:\\raw\\beep_02.mp3"
     },
     {
         "merged": "C:\\Users\\žan\\.gradle\\daemon\\7.4\\org.tensorflow.lite.examples.imageclassification.app-merged_res-41:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
