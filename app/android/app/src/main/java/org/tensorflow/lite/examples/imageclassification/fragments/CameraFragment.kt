@@ -17,6 +17,7 @@
 package org.tensorflow.lite.examples.imageclassification.fragments
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.media.AudioManager
@@ -49,11 +50,13 @@ import org.tensorflow.lite.task.vision.classifier.Classifications
 import java.io.File
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+
 //import java.util.logging.Handler
 
 class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
 
     companion object {
+
         private const val TAG = "Image Classifier"
     }
 
@@ -81,7 +84,7 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
     var runnable: Runnable? = null
     var delay = 2000
     lateinit var soundPool: SoundPool
-    var sound1 : Int = 0
+    var sound1: Int = 0
     //val  mp: MediaPlayer =  MediaPlayer.create(this.context,R.raw.beep_02);  //MediaPlayer.create(this, R.raw.beep_02);
 
     override fun onResume() {
@@ -104,7 +107,7 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _fragmentCameraBinding = FragmentCameraBinding.inflate(inflater, container, false)
 
@@ -209,7 +212,7 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                     parent: AdapterView<*>?,
                     view: View?,
                     position: Int,
-                    id: Long
+                    id: Long,
                 ) {
                     imageClassifierHelper.currentDelegate = position
                     updateControlsUi()
@@ -228,7 +231,7 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                     parent: AdapterView<*>?,
                     view: View?,
                     position: Int,
-                    id: Long
+                    id: Long,
                 ) {
                     imageClassifierHelper.currentModel = position
                     updateControlsUi()
@@ -318,7 +321,7 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
         }
     }
 
-    private fun getScreenOrientation() : Int {
+    private fun getScreenOrientation(): Int {
         val outMetrics = DisplayMetrics()
 
         val display: Display?
@@ -355,7 +358,7 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
     @SuppressLint("NotifyDataSetChanged")
     override fun onResults(
         results: List<Classifications>?,
-        inferenceTime: Long
+        inferenceTime: Long,
     ) {
 
         activity?.runOnUiThread {
@@ -370,85 +373,84 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
             while (itr.hasNext()) {
                 val kategorije = itr.next().categories;
                 var i = 0;
-                while(i < kategorije.size){
+                while (i < kategorije.size) {
                     val neki = kategorije.get(i);
                     var score = neki.score;
                     var label = neki.label;
-                    Log.i("blabla111",neki.toString())
-                    Log.i("blablaLABEL",neki.label)
-                    Log.i("blablaSCORE",neki.score.toString())
+                    Log.i("blabla111", neki.toString())
+                    Log.i("blablaLABEL", neki.label)
+                    Log.i("blablaSCORE", neki.score.toString())
                     // if the break prediction is present save this information
-                    if(label == "break") {
+                    /*if (label == "break") {
                         maxScore = score;
                         maxLabel = label;
+                    }*/
+                    if (maxScore < score) {
+                        maxScore = score
+                        maxLabel = label
                     }
                     i += 1
                 }
-                Log.i("blabla",kategorije.toString())
+                Log.i("blabla", kategorije.toString())
             }
             // if 'break is among the predictions check some things and play sound
-            if(maxLabel == "break"){
-                Log.i("ZVOK","Ustavi se!!!")
+            if (maxLabel == "break") {
+                Log.i("ZVOK", "Ustavi se!!!")
                 // checking if a file exists and getting data from that file about if the handler has been set. The file contains 1 if a handler is active andd 0 if not
-                val fileName = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas.txt"
-                var file = File(fileName)
-                // create a new file
-                val isNewFileCreated :Boolean = file.createNewFile()
-                if(isNewFileCreated){
-                    //Log.d("neki007","$fileName is created successfully.")
-                } else{
-                    //Log.d("neki007","$fileName already exists.")
-                    //Log.d("neki007",file.readText().toString())
-                    val tslong = file.readText().toString().toInt()
-                    // if handler is not active, activate the handler and write to the file that the handler is now active
-                    if(tslong == 0){
-                        Log.d("neki006","Zacenjam handler!");
-                        var cifra = 1;
-                        file.writeText(cifra.toString())
+                val sharedPreference = context?.getSharedPreferences("cas_pref", Context.MODE_PRIVATE)
+                val running = sharedPreference?.getBoolean("running", false)
+
+
+                //Log.d("neki007","$fileName already exists.")
+                //Log.d("neki007",file.readText().toString())
+                // if handler is not active, activate the handler and write to the file that the handler is now active
+                if (running == false) {
+                    Log.d("neki006", "Zacenjam handler!");
+
+                    val editor = sharedPreference.edit()
+                    editor.putBoolean("running", true)
+                    editor.commit()
+
+                    soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+                    handler.post(Runnable {
+                        //Toast.makeText(this@CameraFragment, "This method will run every 10 seconds", Toast.LENGTH_SHORT).show()
                         soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
-                        handler.post(Runnable {
-                            //Toast.makeText(this@CameraFragment, "This method will run every 10 seconds", Toast.LENGTH_SHORT).show()
-                            soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
-                            handler.postDelayed(runnable!!, delay.toLong())
-                            //mp.start()
-                        }.also { runnable = it })//, delay.toLong())
-                    }
-                   /* val tscurrent = System.currentTimeMillis()
-                    //Log.d("neki007", (tscurrent-tslong).toString())
-                    if((tscurrent - tslong) > 3000) {
-                        Log.d("neki007","SEM V IF STAVKU!")
-                        file.writeText(tscurrent.toString())
-                        val  mp: MediaPlayer =  MediaPlayer.create(this.context,R.raw.beep_02);  //MediaPlayer.create(this, R.raw.beep_02);
-                        mp.start()
-                    }*/
+                        handler.postDelayed(runnable!!, delay.toLong())
+                        //mp.start()
+                    }.also { runnable = it })//, delay.toLong())
+                    val tscurrent = System.currentTimeMillis()
+                    editor.putLong("tslong", tscurrent)
+                    editor.commit()
+
+                    /* val tscurrent = System.currentTimeMillis()
+                     //Log.d("neki007", (tscurrent-tslong).toString())
+                     if((tscurrent - tslong) > 3000) {
+                         Log.d("neki007","SEM V IF STAVKU!")
+                         file.writeText(tscurrent.toString())
+                         val  mp: MediaPlayer =  MediaPlayer.create(this.context,R.raw.beep_02);  //MediaPlayer.create(this, R.raw.beep_02);
+                         mp.start()
+                     }*/
                     //file.writeText(tscurrent.toString())
                 }
 
                 //Log.d("neki007",file.readText().toString();
-            // if break is not among the predictions read data from the file that contains info if the handler is active and the file that contains info of the time passed
+                // if break is not among the predictions read data from the file that contains info if the handler is active and the file that contains info of the time passed
             } else {
-                val fileName = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas.txt"
-                var file = File(fileName)
-                val fileName1 = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas1.txt"
-                var file1 = File(fileName1)
-                var cifra = 0;
-                // create a new file
-                val isNewFileCreated :Boolean = file.createNewFile()
-                if(isNewFileCreated){
-                    //Log.d("neki007","$fileName is created successfully.")
-                }
-                val tslong = file.readText().toString().toInt()
+                val sharedPreference = context?.getSharedPreferences("cas_pref", Context.MODE_PRIVATE)
+                val tslong = sharedPreference?.getLong("tslong", 0L)
+                val running = sharedPreference?.getBoolean("running", false)
+
                 val tscurrent = System.currentTimeMillis()
                 //Log.d("neki007", (tscurrent-tslong).toString())
-                val tslong1 = file1.readText().toString().toLong()
                 // if handler is currently active and if more than 3 seconds have passed when the handler was first stoped, write to the file that the handler is not active nad write to another file the current time
-                if(tslong == 1 && (tscurrent - tslong1) > 3000){
-                    Log.d("neki006","Brisem handler!")
-                    if(runnable != null) {
+                if (running==true && tslong!=null && (tscurrent - tslong) > 3000) {
+                    Log.d("neki006", "Brisem handler!")
+                    if (runnable != null) {
                         handler.removeCallbacks(runnable!!)
+                        val editor = sharedPreference.edit()
+                        editor.putBoolean("running", false)
+                        editor.commit()
                     }
-                    file1.writeText(tscurrent.toString())
-                    file.writeText(cifra.toString())
                 }
 
 

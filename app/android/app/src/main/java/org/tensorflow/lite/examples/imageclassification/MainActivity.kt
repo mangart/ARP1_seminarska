@@ -1,5 +1,6 @@
 package org.tensorflow.lite.examples.imageclassification
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.media.MediaPlayer
@@ -18,19 +19,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        val fileName = "/data/data/org.tensorflow.lite.examples.imageclassification/files/" + "cas1.txt"
-        var file = File(fileName)
-        // create a new file
-        val isNewFileCreated :Boolean = file.createNewFile()
-        if(isNewFileCreated){
-            Log.d("neki007","$fileName is created successfully.")
-        } else{
-            Log.d("neki007","$fileName already exists.")
-            Log.d("neki007",file.readText().toString())
-        }
-        val tsLong = System.currentTimeMillis()
-        file.writeText(tsLong.toString())
-        Log.d("neki007",file.readText().toString())
+        val tscurrent = System.currentTimeMillis()
+        val context = applicationContext
+        val sharedPreference = context.getSharedPreferences("cas_pref", Context.MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+        editor.putLong("tslong", tscurrent)
+        editor.putBoolean("running", false)
+        editor.commit()
+
         val button: Button = findViewById(R.id.button)
         button.setOnClickListener {
             // Do something in response to button click
