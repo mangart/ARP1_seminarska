@@ -33,7 +33,7 @@ import org.tensorflow.lite.task.vision.classifier.ImageClassifier
 class ImageClassifierHelper(
     var threshold: Float = 0.5f,
     var numThreads: Int = 2,
-    var maxResults: Int = 2,
+    var maxResults: Int = 1,
     var currentDelegate: Int = 0,
     var currentModel: Int = 0,
     val context: Context,

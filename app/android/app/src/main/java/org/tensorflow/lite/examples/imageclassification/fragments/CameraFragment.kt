@@ -404,14 +404,14 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                 //Log.d("neki007","$fileName already exists.")
                 //Log.d("neki007",file.readText().toString())
                 // if handler is not active, activate the handler and write to the file that the handler is now active
-                if (running == false) {
+                if (running == false && maxScore > 0.5f) {
                     Log.d("neki006", "Zacenjam handler!");
 
                     val editor = sharedPreference.edit()
                     editor.putBoolean("running", true)
                     editor.commit()
 
-                    soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
+                    //soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
                     handler.post(Runnable {
                         //Toast.makeText(this@CameraFragment, "This method will run every 10 seconds", Toast.LENGTH_SHORT).show()
                         soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
