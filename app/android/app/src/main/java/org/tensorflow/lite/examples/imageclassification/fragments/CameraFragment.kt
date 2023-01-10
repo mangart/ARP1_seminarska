@@ -446,7 +446,8 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                 if (running==true && tslong!=null && (tscurrent - tslong) > 3000) {
                     Log.d("neki006", "Brisem handler!")
                     if (runnable != null) {
-                        handler.removeCallbacks(runnable!!)
+                        handler.removeCallbacksAndMessages(null);
+                        //handler.removeCallbacks(null)
                         val editor = sharedPreference.edit()
                         editor.putBoolean("running", false)
                         editor.commit()
