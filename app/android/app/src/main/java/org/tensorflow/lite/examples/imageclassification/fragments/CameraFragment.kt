@@ -76,6 +76,10 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
     private var camera: Camera? = null
     private var cameraProvider: ProcessCameraProvider? = null
 
+    private var private_running = false
+    private var private_tscurrent = 0L
+
+
     /** Blocking camera operations are performed using this executor */
     private lateinit var cameraExecutor: ExecutorService
 
@@ -132,6 +136,9 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
             // Set up the camera and its use cases
             setUpCamera()
         }
+
+        soundPool = SoundPool(2, AudioManager.STREAM_MUSIC, 0)
+        sound1 = soundPool.load(this.context, R.raw.beep_02, 1)
 
         // Attach listeners to UI control widgets
         initBottomSheetControls()
@@ -363,8 +370,7 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
 
         activity?.runOnUiThread {
             // Initializing sound variables
-            soundPool = SoundPool(2, AudioManager.STREAM_MUSIC, 0)
-            sound1 = soundPool.load(this.context, R.raw.beep_02, 1)
+
             // creating iterator for navigating through predicted labels
             val itr = results!!.listIterator()
             var maxLabel: String = "";
@@ -397,19 +403,13 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
             if (maxLabel == "break") {
                 Log.i("ZVOK", "Ustavi se!!!")
                 // checking if a file exists and getting data from that file about if the handler has been set. The file contains 1 if a handler is active andd 0 if not
-                val sharedPreference = context?.getSharedPreferences("cas_pref", Context.MODE_PRIVATE)
-                val running = sharedPreference?.getBoolean("running", false)
-
-
                 //Log.d("neki007","$fileName already exists.")
                 //Log.d("neki007",file.readText().toString())
                 // if handler is not active, activate the handler and write to the file that the handler is now active
-                if (running == false && maxScore > 0.5f) {
+                if (!private_running && maxScore > 0.5f) {
+                    private_running = true
                     Log.d("neki006", "Zacenjam handler!");
 
-                    val editor = sharedPreference.edit()
-                    editor.putBoolean("running", true)
-                    editor.commit()
 
                     //soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
                     handler.post(Runnable {
@@ -419,9 +419,6 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                         //mp.start()
                     }.also { runnable = it })//, delay.toLong())
                     val tscurrent = System.currentTimeMillis()
-                    editor.putLong("tslong", tscurrent)
-                    editor.commit()
-
                     /* val tscurrent = System.currentTimeMillis()
                      //Log.d("neki007", (tscurrent-tslong).toString())
                      if((tscurrent - tslong) > 3000) {
@@ -436,25 +433,18 @@ class CameraFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
                 //Log.d("neki007",file.readText().toString();
                 // if break is not among the predictions read data from the file that contains info if the handler is active and the file that contains info of the time passed
             } else {
-                val sharedPreference = context?.getSharedPreferences("cas_pref", Context.MODE_PRIVATE)
-                val tslong = sharedPreference?.getLong("tslong", 0L)
-                val running = sharedPreference?.getBoolean("running", false)
-
                 val tscurrent = System.currentTimeMillis()
                 //Log.d("neki007", (tscurrent-tslong).toString())
                 // if handler is currently active and if more than 3 seconds have passed when the handler was first stoped, write to the file that the handler is not active nad write to another file the current time
-                if (running==true && tslong!=null && (tscurrent - tslong) > 3000) {
+                if (private_running && (tscurrent - private_tscurrent) > 3000) {
                     Log.d("neki006", "Brisem handler!")
+                    private_running = false
+                    private_tscurrent = tscurrent
                     if (runnable != null) {
                         handler.removeCallbacksAndMessages(null);
                         //handler.removeCallbacks(null)
-                        val editor = sharedPreference.edit()
-                        editor.putBoolean("running", false)
-                        editor.commit()
                     }
                 }
-
-
             }
             //Log.i("blabla",results.toString())
             classificationResultsAdapter.updateResults(results)
